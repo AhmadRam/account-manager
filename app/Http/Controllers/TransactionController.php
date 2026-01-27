@@ -30,10 +30,6 @@ class TransactionController extends Controller
             'balance' => 0
         ]);
 
-        // التحقق من كفاية الرصيد للسحب (المبلغ السالب)
-        if ($request->amount < 0 && ($account->balance + $request->amount) < 0) {
-            return back()->withErrors(['amount' => 'الرصيد غير كافي للسحب']);
-        }
 
         // إضافة المعاملة
         $account->addTransaction(
