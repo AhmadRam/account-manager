@@ -44,7 +44,7 @@
 
                     <div class="mb-3">
                         <label for="amount" class="form-label">المبلغ</label>
-                        <input type="number" step="0.01" 
+                        <input type="text" inputmode="text" pattern="-?[0-9]*\.?[0-9]+" 
                                class="form-control @error('amount') is-invalid @enderror" 
                                id="amount" name="amount" value="{{ old('amount') }}" required
                                placeholder="مثال: 100 للإيداع، -100 للسحب">
